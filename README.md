@@ -47,7 +47,7 @@ This repository provides a Proof of Concept (POC) for integrating LlamaIndex wit
     Run the main application script:
 
     ```bash
-    python main.py
+    uvicorn app.main:app --reload
     ```
 
 6. **Freeze Dependencies**
