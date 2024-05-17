@@ -1,5 +1,8 @@
+from typing import Optional
 from llama_index.llms.azure_openai import AzureOpenAI
+from llama_index.core.llms import ChatMessage
 from ..settings import settings
+from ..models.chat import Message
 import logging
 
 logger = logging.getLogger(__name__)
@@ -14,10 +17,12 @@ def get_azure_openai():
         api_version=settings.OPENAI_API_VERSION,
     )
 
-def complete_text(prompt: str) -> str:
+def handle_chat_service(messages: list[Message]) -> Optional[str]:
     try:
         llm = get_azure_openai()
-        response = llm.complete(prompt)
+        chat_messages = [ChatMessage(role=msg.role, content=msg.content) for msg in messages]
+        response = llm.chat(chat_messages)
+        
         if hasattr(response, 'text'):
             response_text = response.text.strip()
         else:
