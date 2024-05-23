@@ -57,6 +57,19 @@ This repository provides a Proof of Concept (POC) for integrating LlamaIndex wit
     ```bash
     pip freeze > requirements.txt
     ```
+
+7. **uvicorn app.main:app**
+    
+    ```bash
+    uvicorn app.main:app 
+    ```
+
+8. **Streamlit frontend**
+    
+    ```bash
+    streamlit run frontend/app.py 
+    ```
+
 ## Screenshot
 
 Here is a screenshot of the application in action:

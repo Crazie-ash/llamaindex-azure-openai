@@ -1,11 +1,18 @@
 from fastapi import FastAPI
-from .routers.chat_router import router
 
+from app.routers import router
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi import HTTPException
 
+from app.services.azure_service import get_azure_embedding, get_azure_openai
+from app.services.elasticsearch_service import get_elasticSearch
+
 app = FastAPI()
+
+get_azure_openai()
+get_azure_embedding()
+get_elasticSearch()
 
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
