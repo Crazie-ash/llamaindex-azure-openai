@@ -47,7 +47,7 @@ This repository provides a Proof of Concept (POC) for integrating LlamaIndex wit
     Run the main application script:
 
     ```bash
-    python main.py
+    uvicorn app.main:app --reload
     ```
 
 6. **Freeze Dependencies**
@@ -57,11 +57,24 @@ This repository provides a Proof of Concept (POC) for integrating LlamaIndex wit
     ```bash
     pip freeze > requirements.txt
     ```
+
+7. **Run Backend**
+    
+    ```bash
+    uvicorn app.main:app 
+    ```
+
+8. **Streamlit frontend**
+    
+    ```bash
+    streamlit run frontend/app.py 
+    ```
+
 ## Screenshot
 
 Here is a screenshot of the application in action:
 
-![Screenshot](screenshots/screenshot.png)
+![Screenshot](screenshots/chatwithai.png)
 
 ## Reference
 
