@@ -74,7 +74,7 @@ This repository provides a Proof of Concept (POC) for integrating LlamaIndex wit
 
 Here is a screenshot of the application in action:
 
-![Screenshot](screenshots/screenshot.png)
+![Screenshot](screenshots/chatwithai.png)
 
 ## Reference
 
