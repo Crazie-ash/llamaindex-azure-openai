@@ -1,5 +1,4 @@
 from typing import Optional
-from llama_index.llms.azure_openai import AzureOpenAI
 from llama_index.core.llms import ChatMessage
 from ..models.chat import Message
 import logging
