@@ -58,7 +58,7 @@ This repository provides a Proof of Concept (POC) for integrating LlamaIndex wit
     pip freeze > requirements.txt
     ```
 
-7. **uvicorn app.main:app**
+7. **Run Backend**
     
     ```bash
     uvicorn app.main:app 
