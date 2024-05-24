@@ -1,3 +1,4 @@
+from elasticsearch import Elasticsearch
 from fastapi import HTTPException
 from ..models.chat import ChatRequest, ChatResponse
 from ..services.chat_service import handle_chat_service
@@ -5,9 +6,9 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def handle_chat(request: ChatRequest) -> ChatResponse:
+def handle_chat(request: ChatRequest, es: Elasticsearch) -> ChatResponse:
     try:
-        response = handle_chat_service(request.messages)
+        response = handle_chat_service(es, request.prompt)
         return ChatResponse(
             status=True,
             message="Chat successful",

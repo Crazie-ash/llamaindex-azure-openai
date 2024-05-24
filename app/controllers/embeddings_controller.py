@@ -1,7 +1,7 @@
 from app.models.embeddings import EmbeddingsResponse
 from llama_index.core import Settings
 from elasticsearch import Elasticsearch
-from elasticsearch.helpers import bulk, scan, parallel_bulk
+from elasticsearch.helpers import scan, parallel_bulk
 import logging
 
 def create_embeddings(es: Elasticsearch, index_name: str) -> EmbeddingsResponse:

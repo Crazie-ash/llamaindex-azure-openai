@@ -41,7 +41,7 @@ if prompt := st.chat_input("What is up?"):
 
     response = requests.post(
         'http://127.0.0.1:8000/chat',
-        json={"messages": st.session_state.messages}
+        json={"prompt": prompt}
     ).json()
 
     if response.get("status") and response.get("data"):
