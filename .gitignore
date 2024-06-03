@@ -1,1 +1,5 @@
-.env
+venv
+flaskenv
+*/.env
+*.pyc
+.vscode/launch.json
